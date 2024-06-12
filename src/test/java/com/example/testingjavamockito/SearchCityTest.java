@@ -2,8 +2,9 @@ package com.example.testingjavamockito;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class SearchCityTest {
 
@@ -24,5 +25,19 @@ public class SearchCityTest {
 
         // Assert
         assertTrue(result.contains(expectedMessage));
+    }
+
+    @Test
+    public void searchCityWith2Characters() {
+        // Arrange
+        searchCity = new SearchCity();
+
+        // Act
+        List<String> result = searchCity.searchCity("Va");
+
+        // Assert
+        assertEquals(2, result.size());
+        assertTrue(result.contains("Valence"));
+        assertTrue(result.contains("Vancouver"));
     }
 }
