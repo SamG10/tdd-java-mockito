@@ -16,6 +16,9 @@ public class Shop {
                     product.setQuality(Math.max(0, product.getQuality() - 1));
                 }
                 break;
+            case "brie":
+                product.setQuality(Math.min(50, product.getQuality() + 1));
+                break;
             default:
                 throw new UnsupportedOperationException("Not yet implemented");
         }
