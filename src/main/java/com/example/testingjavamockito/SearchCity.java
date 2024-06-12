@@ -28,6 +28,10 @@ public class SearchCity {
         cities.add("Rome");
         cities.add("Istanbul");
 
+        if (city.equals("*")) {
+            return new ArrayList<>(cities);
+        }
+
         if (city.length() < 2) {
             throw new NotFoundException("City not found, please try again with at least 2 characters minimum");
         }
