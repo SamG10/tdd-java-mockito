@@ -33,7 +33,7 @@ public class SearchCity {
         }
 
         return cities.stream()
-                .filter(c -> c.toLowerCase().startsWith(city.toLowerCase()))
+                .filter(c -> c.toLowerCase().contains(city.toLowerCase()))
                 .collect(Collectors.toList());
     }
 }
