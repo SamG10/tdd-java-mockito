@@ -4,6 +4,7 @@ import jdk.jshell.spi.ExecutionControl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class SearchCity {
     private List<String> cities;
@@ -31,6 +32,8 @@ public class SearchCity {
             throw new NotFoundException("City not found, please try again with at least 2 characters minimum");
         }
 
-        throw new UnsupportedOperationException("");
+        return cities.stream()
+                .filter(c -> c.toLowerCase().startsWith(city.toLowerCase()))
+                .collect(Collectors.toList());
     }
 }

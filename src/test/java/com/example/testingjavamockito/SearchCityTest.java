@@ -40,4 +40,17 @@ public class SearchCityTest {
         assertTrue(result.contains("Valence"));
         assertTrue(result.contains("Vancouver"));
     }
+
+    @Test
+    public void searchCityWithContainCharactersInTheCity() {
+        // Arrange
+        searchCity = new SearchCity();
+
+        // Act
+        List<String> result = searchCity.searchCity("ape");
+
+        // Assert
+        assertEquals(1, result.size());
+        assertTrue(result.contains("Budapest"));
+    }
 }
