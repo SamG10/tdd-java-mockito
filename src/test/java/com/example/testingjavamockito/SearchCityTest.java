@@ -2,6 +2,7 @@ package com.example.testingjavamockito;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -52,5 +53,24 @@ public class SearchCityTest {
         // Assert
         assertEquals(1, result.size());
         assertTrue(result.contains("Budapest"));
+    }
+
+    @Test
+    public void searchAllCity() {
+        // Arrange
+        searchCity = new SearchCity();
+
+        // Act
+        List<String> result = searchCity.searchCity("*");
+
+        List<String> expectedCities = Arrays.asList(
+                "Paris", "Budapest", "Skopje", "Rotterdam", "Valence",
+                "Vancouver", "Amsterdam", "Vienne", "Sydney", "New York",
+                "Londres", "Bangkok", "Hong Kong", "Dubaï", "Rome", "Istanbul"
+        );
+
+        // Assert
+        assertEquals(expectedCities.size(), result.size());
+        assertTrue(result.containsAll(expectedCities));
     }
 }
