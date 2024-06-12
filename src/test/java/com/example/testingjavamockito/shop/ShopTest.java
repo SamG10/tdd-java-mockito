@@ -10,16 +10,16 @@ public class ShopTest {
 
     @BeforeEach
     void init() {
-        Shop shop = new Shop();
+        shop = new Shop();
     }
 
     @Test
     public void updateProductAfterExpirationDate() {
-        Product product = new Product("cereale", "Muesli", 10, 20);
+        Product product = new Product("normal", "name", 0, 20);
 
         shop.update(product);
 
-        assertEquals(9, product.getSellIn());
+        assertEquals(-1, product.getSellIn());
         assertEquals(18, product.getQuality());
     }
 
