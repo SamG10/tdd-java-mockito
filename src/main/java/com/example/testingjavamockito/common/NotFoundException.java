@@ -1,4 +1,4 @@
-package com.example.testingjavamockito;
+package com.example.testingjavamockito.common;
 
 public class NotFoundException extends RuntimeException {
     public NotFoundException(String message) {

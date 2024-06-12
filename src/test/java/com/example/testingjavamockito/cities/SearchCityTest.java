@@ -1,5 +1,6 @@
-package com.example.testingjavamockito;
+package com.example.testingjavamockito.cities;
 
+import com.example.testingjavamockito.common.NotFoundException;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
